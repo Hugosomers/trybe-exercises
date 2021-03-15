@@ -1,5 +1,25 @@
-Este é o meu repositório para os exercícios da Trybe.
+# Repositório para exercícios da Trybe.
 
-Vou desenvolver e dar push em todos os exercícios que eu fizer.
+Tudo o que for feito de exercícios e práticas nos dias de conteúdo será atualizado neste repositório.
 
-Vou aprender HTML5, CSS, REACT, JavaScript, SQL e NoSQL e muito mais. A medida que eu for aprendendo e descobrindo vou atualizando este README.
+## O que vou aprender?
+
+-HTML5
+-CSS
+-REACT
+-JavaScript
+-Node.js
+-SQL 
+-NoSQL
+-Soft Skills
+-Metodologia Ágeis
+
+## Atualizações
+
+Sempre que surgirem novidades, este README será atualizado.
+
+### LinkedIn
+
+https://www.linkedin.com/in/hugo-somers-lombardi-abreu
+
+
