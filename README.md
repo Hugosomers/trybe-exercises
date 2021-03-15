@@ -4,15 +4,15 @@ Tudo o que for feito de exercícios e práticas nos dias de conteúdo será atua
 
 ## O que vou aprender?
 
--HTML5
--CSS
--REACT
--JavaScript
--Node.js
--SQL 
--NoSQL
--Soft Skills
--Metodologia Ágeis
+- HTML5
+- CSS
+- REACT
+- JavaScript
+- Node.js
+- SQL 
+- NoSQL
+- Soft Skills
+- Metodologia Ágeis
 
 ## Atualizações
 
