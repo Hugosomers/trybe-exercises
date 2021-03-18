@@ -1,0 +1,40 @@
+body{
+    font-size: 16px;
+}  
+
+h1{
+  font-size: 65px;
+  color: orange;
+  font-family: sans-serif;
+}
+ul{
+  background-color: gray;
+  text-align: center;
+  line-height: 20px;
+}
+
+.backgroundClass{
+  background-color: lightblue;
+}
+
+p{
+    font-weight: 600;
+    font-size: 3em;
+    font-style: italic;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#preto{
+    color: white;
+    background-color: black;
+}
+#branco{
+    background-color: whitesmoke;
+}
+#azul{
+    background-color: blue;
+}
+#vermelho{
+    background-color: red;
+}
