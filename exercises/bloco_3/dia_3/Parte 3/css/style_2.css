@@ -1,0 +1,54 @@
+div:hover{
+  border: 2px solid black;
+}
+
+#um{
+  background-color: aquamarine;
+  width: 300px;
+}
+
+#dois{
+  background-color: black;
+  color: white;
+  width: 300px;
+}
+
+
+#tres{
+  background-color: red;
+  width: 500px;
+}
+
+#quatro{
+  background-color: orangered;
+  width: 300px;
+}
+
+#cinco{
+  background-color: lightsalmon;
+  width: 300px;
+}
+
+h3{
+  font-style: italic;
+}
+
+#h31{
+  text-align: center;
+}
+
+#h32:hover{
+  color: purple;
+}
+
+#h33{
+  text-align: right;
+}
+
+#h34{
+  font-size: 25px;
+}
+
+#h35{
+  font-weight: 100;
+}
