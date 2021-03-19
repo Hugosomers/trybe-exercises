@@ -1,54 +1,44 @@
 div:hover{
-  border: 2px solid black;
+  border: 1px solid black;
 }
 
-#um{
-  background-color: aquamarine;
-  width: 300px;
+div:nth-of-type(1){
+  background-color: green;
 }
 
-#dois{
-  background-color: black;
-  color: white;
-  width: 300px;
-}
-
-
-#tres{
+div:nth-of-type(2){
   background-color: red;
-  width: 500px;
 }
 
-#quatro{
+div:nth-of-type(3){
   background-color: orangered;
-  width: 300px;
+  height: 50px;
 }
 
-#cinco{
-  background-color: lightsalmon;
-  width: 300px;
+div:nth-of-type(4){
+  background-color: purple;
 }
 
-h3{
+div:nth-of-type(5){
+  background-color: blue;
+}
+
+div:nth-of-type(odd){
   font-style: italic;
 }
 
-#h31{
-  text-align: center;
+div:nth-of-type(1) h3{
+  color: white;
 }
-
-#h32:hover{
-  color: purple;
+div:nth-of-type(2) h3{
+  color: green;
 }
-
-#h33{
-  text-align: right;
+div:nth-of-type(3) h3{
+  color: blue;
 }
-
-#h34{
-  font-size: 25px;
+div:nth-of-type(4) h3{
+  color: black;
 }
-
-#h35{
-  font-weight: 100;
+div:nth-of-type(5) h3{
+  color: antiquewhite;
 }
