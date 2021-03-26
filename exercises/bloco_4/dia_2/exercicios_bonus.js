@@ -12,5 +12,3 @@ for (let index = 1; index < numbers.length; index += 1){
 }
 console.log('Exercício 1');
 console.log(numbers);
-
-// Exercício 2
