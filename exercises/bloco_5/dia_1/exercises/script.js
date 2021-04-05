@@ -14,3 +14,4 @@ Aqui você vai modificar os elementos já existentes utilizando apenas as funç�
 document.getElementsByTagName('p')[1].innerText = 'Onde eu me vejo daqui a 2 anos';
 document.getElementsByTagName('div')[0].style.backgroundColor = 'rgb(76,164,109)';
 document.getElementsByTagName('div')[1].style.backgroundColor = 'white';
+document.getElementsByClassName('title')[0].innerText = 'Exercício 5.1 - JavaScript';
