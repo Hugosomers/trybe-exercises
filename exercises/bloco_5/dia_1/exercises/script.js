@@ -11,11 +11,20 @@ Aqui você vai modificar os elementos já existentes utilizando apenas as funç�
 6 Crie uma função que exiba o conteúdo de todas as tags <p> no console.
 */
 
+// Exercício 1
 document.getElementsByTagName('p')[1].innerText = 'Onde eu me vejo daqui a 2 anos';
+// Exercício 2
 document.getElementsByTagName('div')[0].style.backgroundColor = 'rgb(76,164,109)';
+// Exercício 3
 document.getElementsByTagName('div')[1].style.backgroundColor = 'white';
+// Exercício 4
 document.getElementsByClassName('title')[0].innerText = 'Exercício 5.1 - JavaScript';
+// Exercício 5
 let saveLength = document.getElementsByTagName('p').length;
 for (let index = 0; index < saveLength; index += 1) {
   document.getElementsByTagName('p')[index].style.textTransform = 'uppercase';
+}
+// Exercício 6
+for (let index2 = 0; index2 < saveLength; index2 += 1) {
+console.log(document.getElementsByTagName('p')[index2].innerText);
 }
