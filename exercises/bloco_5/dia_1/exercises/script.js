@@ -12,3 +12,4 @@ Crie uma função que exiba o conteúdo de todas as tags <p> no console.
 */
 
 document.getElementsByTagName('p')[1].innerText = 'Onde eu me vejo daqui a 2 anos';
+document.getElementsByTagName('div')[0].style.backgroundColor = 'rgb(76,164,109)';
