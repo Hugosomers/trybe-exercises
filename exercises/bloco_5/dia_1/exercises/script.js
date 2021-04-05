@@ -15,3 +15,7 @@ document.getElementsByTagName('p')[1].innerText = 'Onde eu me vejo daqui a 2 ano
 document.getElementsByTagName('div')[0].style.backgroundColor = 'rgb(76,164,109)';
 document.getElementsByTagName('div')[1].style.backgroundColor = 'white';
 document.getElementsByClassName('title')[0].innerText = 'Exercício 5.1 - JavaScript';
+let saveLength = document.getElementsByTagName('p').length;
+for (let index = 0; index < saveLength; index += 1) {
+  document.getElementsByTagName('p')[index].style.textTransform = 'uppercase';
+}
