@@ -20,3 +20,8 @@ document.querySelector('.main-content').appendChild(element);
 let element2 = createElement('p');
 element2.innerText = 'Algum texto';
 document.querySelector('.center-content').appendChild(element2);
+
+// Exercício 5
+element = createElement('div');
+element.className = 'left-content';
+document.querySelector('.main-content').appendChild(element);
