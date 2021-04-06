@@ -15,3 +15,8 @@ document.querySelector('body').appendChild(element);
 element = createElement('div');
 element.className = 'center-content';
 document.querySelector('.main-content').appendChild(element);
+
+// Exercício 4
+let element2 = createElement('p');
+element2.innerText = 'Algum texto';
+document.querySelector('.center-content').appendChild(element2);
