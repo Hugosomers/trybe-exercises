@@ -11,3 +11,7 @@ element = createElement('div');
 element.className = 'main-content';
 document.querySelector('body').appendChild(element);
 
+// Exercício 3
+element = createElement('div');
+element.className = 'center-content';
+document.querySelector('.main-content').appendChild(element);
