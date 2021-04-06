@@ -32,3 +32,7 @@ element.className = 'right-content';
 document.querySelector('.main-content').appendChild(element);
 
 // Exercício 7
+element = createElement('img');
+element.className = 'small-image';
+element.src = 'https://picsum.photos/200'
+document.querySelector('.left-content').appendChild(element);
