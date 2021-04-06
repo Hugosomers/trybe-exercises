@@ -2,9 +2,9 @@
 function createElement(elementName) {
   return document.createElement(elementName);
 }
-let element = createElement('h1');
-element.innerText = 'Exercício 5.2 - JavaScript DOM';
-document.querySelector('body').appendChild(element);
+let element1 = createElement('h1');
+element1.innerText = 'Exercício 5.2 - JavaScript DOM';
+document.querySelector('body').appendChild(element1);
 
 // Exercício 2
 element = createElement('div');
@@ -84,3 +84,6 @@ for (let index = 1; index <= 3; index += 1) {
   element4 = createElement('h3');
   document.querySelector('.main-content').appendChild(element4);
 }
+
+// Exercício 1 - Parte 2
+element1.className = 'title';
