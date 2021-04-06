@@ -77,3 +77,10 @@ for (let index = 1; index <= size; index += 1) {
   }
   document.querySelector('.right-content').appendChild(element3);
 }
+
+// Exercício 9
+let element4;
+for (let index = 1; index <= 3; index += 1) {
+  element4 = createElement('h3');
+  document.querySelector('.main-content').appendChild(element4);
+}
