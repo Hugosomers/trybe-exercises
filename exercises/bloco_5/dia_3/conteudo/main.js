@@ -21,6 +21,9 @@ myWebpage.addEventListener('dblclick', function() {
 
 myWebpage.addEventListener('mouseover', function() {
   myWebpage.style.color = 'red';
+  if (myWebpage.style.color === 'red') {
+    myWebpage.style.color = 'white';
+  }
 });
 
 function resetText(event) {

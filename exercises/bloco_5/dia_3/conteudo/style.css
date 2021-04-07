@@ -65,6 +65,6 @@ input:focus {
   outline: 2px solid #006dfb;
 }
 
-.tech {
+#divUm:hover,#divDois:hover,#divTres:hover {
   transform: translateY(-20px);
 }
