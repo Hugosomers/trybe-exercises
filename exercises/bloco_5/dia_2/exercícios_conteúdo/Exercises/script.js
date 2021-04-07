@@ -95,3 +95,6 @@ let saveLeft = document.querySelector('.left-content');
 
 saveMain.removeChild(saveLeft);
 
+// Exercício 4 - Parte 2
+document.getElementsByClassName('right-content')[0].style.marginRight = 'auto';
+
