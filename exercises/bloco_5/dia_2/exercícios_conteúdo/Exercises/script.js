@@ -38,6 +38,8 @@ element.src = 'https://picsum.photos/200'
 document.querySelector('.left-content').appendChild(element);
 
 // Exercício 8
+let ulCreate = createElement('ul');
+document.querySelector('.right-content').appendChild(ulCreate);
 let element3;
 let size = 10;
 for (let index = 1; index <= size; index += 1) {
@@ -75,7 +77,7 @@ for (let index = 1; index <= size; index += 1) {
       break;
 
   }
-  document.querySelector('.right-content').appendChild(element3);
+  document.querySelector('ul').appendChild(element3);
 }
 
 // Exercício 9 && Exercício 2 - Parte 2
@@ -102,3 +104,10 @@ document.getElementsByClassName('right-content')[0].style.marginRight = 'auto';
 
 let saveFather = document.querySelector('.center-content').parentNode;
 saveFather.style.backgroundColor = 'green';
+
+// Exercício 6 - Parte 2
+for (let index = 0; index < 2; index += 1) {
+  let saveList = document.querySelector('ul');
+  let saveListFinal = document.querySelector('ul').lastChild;
+  saveList.removeChild(saveListFinal);
+}
