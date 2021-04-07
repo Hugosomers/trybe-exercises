@@ -98,3 +98,7 @@ saveMain.removeChild(saveLeft);
 // Exercício 4 - Parte 2
 document.getElementsByClassName('right-content')[0].style.marginRight = 'auto';
 
+// Exercício 5 - Parte 2
+
+let saveFather = document.querySelector('.center-content').parentNode;
+saveFather.style.backgroundColor = 'green';
