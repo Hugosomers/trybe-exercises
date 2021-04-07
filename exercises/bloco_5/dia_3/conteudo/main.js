@@ -13,22 +13,15 @@ divDois.addEventListener('click', function() {
 input.addEventListener('keyup', function() {
   const tech = document.querySelector('.tech');
   tech.innerText = 'Texto do elemento alterado';
-})
+});
 
 myWebpage.addEventListener('dblclick', function() {
-  window.location.href = 'https://hugosomers.github.io/';
-})
+  window.open('https://hugosomers.github.io/', '_blank');
+});
 
-
-/*
- Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
-redirecione para alguma página;
-1. Que tal redirecionar para seu portifólio?
- Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
-a cor do mesmo;
-
-Segue abaixo um exemplo do uso de event.target:
-*/
+myWebpage.addEventListener('mouseover', function() {
+  myWebpage.style.color = 'red';
+});
 
 function resetText(event) {
   // O Event é passado como um parâmetro para a função.
