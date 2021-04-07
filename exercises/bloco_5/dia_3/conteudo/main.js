@@ -4,18 +4,23 @@ const divTres = document.getElementById('divTres');
 const input = document.getElementById('input');
 const myWebpage = document.getElementById('mySpotrybefy');
 
+
 divDois.addEventListener('click', function() {
   divDois.className = 'tech';
   divUm.classList.remove('tech');
 });
 
+input.addEventListener('keyup', function() {
+  const tech = document.querySelector('.tech');
+  tech.innerText = 'Texto do elemento alterado';
+})
+
+myWebpage.addEventListener('dblclick', function() {
+  window.location.href = 'https://hugosomers.github.io/';
+})
 
 
 /*
- Crie uma função que adicione a classe 'tech' ao elemento selecionado;
-1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
- Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
-com a classe 'tech';
  Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 redirecione para alguma página;
 1. Que tal redirecionar para seu portifólio?
