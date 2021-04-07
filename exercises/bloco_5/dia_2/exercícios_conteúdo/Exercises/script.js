@@ -78,12 +78,15 @@ for (let index = 1; index <= size; index += 1) {
   document.querySelector('.right-content').appendChild(element3);
 }
 
-// Exercício 9
+// Exercício 9 && Exercício 2 - Parte 2
 let element4;
 for (let index = 1; index <= 3; index += 1) {
   element4 = createElement('h3');
+  element4.className = 'description';
   document.querySelector('.main-content').appendChild(element4);
 }
 
 // Exercício 1 - Parte 2
 element1.className = 'title';
+
+
