@@ -4,12 +4,10 @@ const divTres = document.getElementById('divTres');
 const input = document.getElementById('input');
 const myWebpage = document.getElementById('mySpotrybefy');
 
-function addTechClass () {
+divDois.addEventListener('click', function() {
   divDois.className = 'tech';
   divUm.classList.remove('tech');
-}
-
-divDois.addEventListener('click', addTechClass);
+});
 
 
 
