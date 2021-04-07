@@ -89,4 +89,9 @@ for (let index = 1; index <= 3; index += 1) {
 // Exercício 1 - Parte 2
 element1.className = 'title';
 
+// Exercício 3 - Parte 2
+let saveMain = document.querySelector('.main-content');
+let saveLeft = document.querySelector('.left-content');
+
+saveMain.removeChild(saveLeft);
 
