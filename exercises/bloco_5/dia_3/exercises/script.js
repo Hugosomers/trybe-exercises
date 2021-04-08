@@ -58,11 +58,24 @@ butn.addEventListener('click', function(){
 
 function createFridayBtn (str) {
   const btnContainer = document.querySelector('.buttons-container');
-  const btn = document.createElement('button');
-  btn.innerText = str;
-  btn.id = 'btn-friday';
-  btnContainer.appendChild(btn);
+  const btnForFriday = document.createElement('button');
+  btnForFriday.innerText = str;
+  btnContainer.appendChild(btnForFriday);
 }
 
 createHolidayBtn('Sexta-Feira');
+document.getElementsByTagName('button')[1].id = 'btn-friday'
+
+const butnFriday = document.querySelector('#btn-friday');
+butnFriday.addEventListener('click', function(){
+  const fridays = document.getElementsByClassName('friday');
+  let saveDateNumber = ['4', '11', '18', '25'];
+  for (let index = 0; index < fridays.length; index += 1) {
+    if (fridays[index].innerText !== 'XABLAU') {
+      fridays[index].innerText = 'XABLAU';
+    } else {
+      fridays[index].innerText = saveDateNumber[index];
+    }
+  }
+});
 
