@@ -69,12 +69,11 @@ document.getElementsByTagName('button')[1].id = 'btn-friday'
 const butnFriday = document.querySelector('#btn-friday');
 butnFriday.addEventListener('click', function(){
   const fridays = document.getElementsByClassName('friday');
-  let saveDateNumber = ['4', '11', '18', '25'];
   for (let index = 0; index < fridays.length; index += 1) {
     if (fridays[index].innerText !== 'XABLAU') {
       fridays[index].innerText = 'XABLAU';
     } else {
-      fridays[index].innerText = saveDateNumber[index];
+      fridays[index].innerText = parseInt(fridays[index].nextSibling.innerText) - parseInt(1);
     }
   }
 });
