@@ -56,3 +56,13 @@ butn.addEventListener('click', function(){
   }
 });
 
+function createFridayBtn (str) {
+  const btnContainer = document.querySelector('.buttons-container');
+  const btn = document.createElement('button');
+  btn.innerText = str;
+  btn.id = 'btn-friday';
+  btnContainer.appendChild(btn);
+}
+
+createHolidayBtn('Sexta-Feira');
+
