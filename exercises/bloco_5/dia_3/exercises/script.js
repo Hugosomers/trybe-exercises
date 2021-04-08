@@ -105,6 +105,7 @@ function addLegendColor(color) {
 }
 
 addLegendColor('red');
+addLegendColor('blue');
 
 let divTask = document.querySelectorAll('.task');
 
@@ -117,3 +118,12 @@ divTask[index].addEventListener('click', function(){
   }
 })
 }
+
+ulDaysList.addEventListener('click', function(event){
+  let selectedTaskDiv = document.querySelector('.task.selected');
+  if (event.target.style.color !== selectedTaskDiv.style.backgroundColor){
+    event.target.style.color = selectedTaskDiv.style.backgroundColor;
+  } else {
+    event.target.style.color = 'rgb(119,119,119)';
+  }
+})
