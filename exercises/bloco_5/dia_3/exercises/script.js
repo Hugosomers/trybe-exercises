@@ -85,3 +85,12 @@ ulDaysList.addEventListener('mouseover', function(event){
 ulDaysList.addEventListener('mouseout', function(event){
   event.target.style.fontSize = '20px';
 })
+
+function addCustomTask(str) {
+  let spanCreator = document.createElement('span');
+  spanCreator.innerText = str;
+  let myTasks = document.querySelector('.my-tasks');
+  myTasks.appendChild(spanCreator);
+}
+
+addCustomTask('Programar');
