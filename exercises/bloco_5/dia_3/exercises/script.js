@@ -105,3 +105,15 @@ function addLegendColor(color) {
 }
 
 addLegendColor('red');
+
+let divTask = document.querySelectorAll('.task');
+
+for (let index = 0; index < divTask.length; index += 1){
+divTask[index].addEventListener('click', function(){
+  if (divTask[index].classList.length === 1){
+    divTask[index].classList.add('selected');
+  } else if (divTask[index].classList.length > 1) {
+    divTask[index].classList.remove('selected');
+  }
+})
+}
