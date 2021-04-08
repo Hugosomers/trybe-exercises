@@ -30,9 +30,16 @@ function createDays() {
     }
     daysUlList.appendChild(daysUlListItems);
   }
-
-  
-
 }
 
 createDays();
+
+function createHolidayBtn (str) {
+  const btnContainer = document.querySelector('.buttons-container');
+  const btn = document.createElement('button');
+  btn.innerText = str;
+  btn.id = 'btn-holiday';
+  btnContainer.appendChild(btn);
+}
+
+createHolidayBtn('Feriados');
