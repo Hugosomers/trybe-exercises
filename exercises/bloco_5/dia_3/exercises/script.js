@@ -94,3 +94,14 @@ function addCustomTask(str) {
 }
 
 addCustomTask('Programar');
+
+function addLegendColor(color) {
+  let createDiv = document.createElement('div');
+  createDiv.className = 'task';
+  createDiv.style.backgroundColor = color;
+
+  let myTasks = document.querySelector('.my-tasks');
+  myTasks.appendChild(createDiv);
+}
+
+addLegendColor('red');
