@@ -79,3 +79,10 @@ butnFriday.addEventListener('click', function(){
   }
 });
 
+let ulDaysList = document.querySelector('#days');
+ulDaysList.addEventListener('mouseover', function(event){
+  event.target.style.fontSize = '30px';
+});
+ulDaysList.addEventListener('mouseout', function(event){
+  event.target.style.fontSize = '20px';
+})
