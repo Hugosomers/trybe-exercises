@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  margin: 10px;
+}
+
+.hero-heading {
+  text-align: center;
+}
+
+section {
+  /* border: 1px solid red; */
+}
+
+#main-article {
+  border: 1px solid black;
+  width: 70em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.long-paragraph {
+  font-size: 22px;
+  text-align: justify;
+}
