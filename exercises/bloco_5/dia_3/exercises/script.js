@@ -126,4 +126,32 @@ ulDaysList.addEventListener('click', function(event){
   } else {
     event.target.style.color = 'rgb(119,119,119)';
   }
+});
+
+let addButton = document.querySelector('#btn-add');
+let inputBox = document.querySelector('#task-input');
+
+
+addButton.addEventListener('click', function(){
+  if (!inputBox.value) {
+    alert('Erro: Compromisso vazio!');
+  } else {
+    let createCommit = document.createElement('li');
+    createCommit.innerText = inputBox.value;
+    let getTaskUl = document.querySelector('.task-list');
+    getTaskUl.appendChild(createCommit);
+  }
+});
+
+inputBox.addEventListener('keyup', function(event){
+  if (event.keyCode === 13){
+    if (!inputBox.value) {
+      alert('Erro: Compromisso vazio!');
+    } else {
+      let createCommit = document.createElement('li');
+      createCommit.innerText = inputBox.value;
+      let getTaskUl = document.querySelector('.task-list');
+      getTaskUl.appendChild(createCommit);
+    }
+  }
 })
