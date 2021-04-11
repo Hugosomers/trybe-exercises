@@ -15,3 +15,18 @@ lightBtn.addEventListener('click', () => {
     localStorage.setItem('backgroundColor', 'white');
 });
 
+// Requisito 2
+const lightColorBtn = document.querySelector('.lightfontcolor-button');
+const darkColorBtn = document.querySelector('.darkfontcolor-button');
+
+document.body.style.color = localStorage.getItem('fontColor');
+
+lightColorBtn.addEventListener('click', () => {
+  document.body.style.color = 'white';
+  localStorage.setItem('fontColor', 'white');
+});
+
+darkColorBtn.addEventListener('click', () => {
+  document.body.style.color = 'black';
+  localStorage.setItem('fontColor', 'black');
+})
