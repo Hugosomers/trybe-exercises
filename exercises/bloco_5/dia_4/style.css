@@ -11,10 +11,6 @@ header {
   text-align: center;
 }
 
-section {
-  /* border: 1px solid red; */
-}
-
 #main-article {
   border: 1px solid black;
   width: 70em;
