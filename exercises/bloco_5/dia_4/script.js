@@ -45,3 +45,20 @@ smallerFntBtn.addEventListener('click', () => {
   document.body.style.fontSize = '18px';
   localStorage.setItem('fontSize', '18px')
 });
+
+// Requisito 4    
+const lineHeight = document.querySelector('.lineheight-button');
+const biggerLineHeight = document.querySelector('.biggerlineheight-button');
+
+document.body.style.lineHeight= localStorage.getItem('lineHeight');
+
+lineHeight.addEventListener('click', () =>{
+  document.body.style.lineHeight = '1';
+  localStorage.setItem('lineHeight', '1');
+});
+
+biggerLineHeight.addEventListener('click', () =>{
+  document.body.style.lineHeight = '1.3';
+  localStorage.setItem('lineHeight', '1.3');
+});
+
