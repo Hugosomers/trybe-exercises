@@ -1,3 +1,4 @@
+window.onload = function (){
 // Requisito 1
 const nightBtn = document.querySelector('.night-button');
 const lightBtn = document.querySelector('.light-button');
@@ -62,3 +63,19 @@ biggerLineHeight.addEventListener('click', () =>{
   localStorage.setItem('lineHeight', '1.3');
 });
 
+// Requisito 5
+const fontFamily = document.querySelector('.fontfamily-button');
+const arialFFamily = document.querySelector('.arialfontfamily-button');
+
+document.body.style.fontFamily= localStorage.getItem('font');
+
+fontFamily.addEventListener('click', () =>{
+  document.body.style.fontFamily = 'Montserrat, sans-serif';
+  localStorage.setItem('font', 'Montserrat, sans-serif');
+});
+
+arialFFamily.addEventListener('click', () =>{
+  document.body.style.fontFamily = 'Arial';
+  localStorage.setItem('font', 'Arial');
+});
+}
