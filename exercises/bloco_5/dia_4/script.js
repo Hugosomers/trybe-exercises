@@ -29,4 +29,19 @@ lightColorBtn.addEventListener('click', () => {
 darkColorBtn.addEventListener('click', () => {
   document.body.style.color = 'black';
   localStorage.setItem('fontColor', 'black');
-})
+});
+
+// Requisito 3
+const biggerFntBtn = document.querySelector('.fontsizeB-button');
+const smallerFntBtn = document.querySelector('.fontsizeS-button');
+
+document.body.style.fontSize = localStorage.getItem('fontSize');
+
+biggerFntBtn.addEventListener('click', () => {
+  document.body.style.fontSize = '20px';
+  localStorage.setItem('fontSize', '20px')
+});
+smallerFntBtn.addEventListener('click', () => {
+  document.body.style.fontSize = '18px';
+  localStorage.setItem('fontSize', '18px')
+});
