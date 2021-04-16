@@ -5,8 +5,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Formulário</title>
+
+    <!-- Libs/FrameWorks -->
 		<link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="style.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="node_modules/pikaday/css/pikaday.css">
 	</head>
 	<body class="bg-body">
 		<main>
@@ -110,8 +115,7 @@
 							class="form-control"
 						></textarea>
 						<br />
-						<label for="date">Data</label> <br />
-						<input type="text" id="date" name="date" required class="form-control" />
+            <input type="text" id="datepicker">
 					</fieldset>
 					<button type="submit" id="submitBttn" class="btn btn-primary">Enviar</button>
 					<button type="reset" id="clearBttn" class="btn btn-danger">Limpar</button>
@@ -121,5 +125,29 @@
 			<div id="alldata"></div>
 		</main>
 		<script src="script.js"></script>
+    <script src="moment.js"></script>
+    <script src="node_modules/pikaday/pikaday.js"></script>
+    <script>
+var picker = new Pikaday({
+    field: document.getElementById('datepicker'),
+    format: 'D/Mm/YYYY',
+    toString(date, format) {
+        // you should do formatting based on the passed format,
+        // but we will just return 'D/M/YYYY' for simplicity
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    },
+    parse(dateString, format) {
+        // dateString is the result of `toString` method
+        const parts = dateString.split('/');
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const year = parseInt(parts[2], 10);
+        return new Date(year, month, day);
+    }
+});
+  </script>
 	</body>
 </html>
