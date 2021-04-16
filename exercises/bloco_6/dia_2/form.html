@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Cadastro de Currículo</h1>
+    </header>
+    <form action="" id="form">
+      <fieldset>
+        <legend>Dados pessoais</legend>
+        <label for="name">Nome</label> <br>
+        <input type="text" name="name" id="name" required maxlength="40">
+
+        <br>
+
+        <label for="email">Email</label> <br>
+        <input type="email" name="email" id="email" required maxlength="50">
+
+        <br>
+
+        <label for="cpf">CPF</label> <br>
+        <input type="text" name="cpf" id="cpf" required maxlength="11">
+
+        <br>
+
+        <label for="address">Endereço</label> <br>
+        <input type="text" name="address" id="address" required maxlength="200">
+
+        <br>
+
+        <label for="city">Cidade</label> <br>
+        <input type="text" name="city" id="city" required maxlength="28">
+
+        <br>
+
+        <label for="states">Estado</label> <br>
+        <select name="state" id="states" required>
+        </select>
+        
+        <br>
+        <input type="radio" id="house" name="home" value="Casa" required>
+        <label for="house">Casa</label>
+        <input type="radio" id="apartment" name="home" value="Apartamento" required>
+        <label for="apartment">Apartamento</label>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Último emprego</legend>
+        <label for="summary">Resumo do currículo</label><br>
+        <textarea name="summary" id="summary" cols="50" rows="10" maxlength="1000" required></textarea>
+        <br>
+        <label for="office">Cargo</label> <br>
+        <input type="text" id="office" name="office" maxlength="40" required>
+        <br>
+        <label for="jobsummary">Resumo do cargo</label><br>
+        <textarea name="jobsummary" id="jobsummary" cols="50" rows="10" maxlength="500" required></textarea>
+        <br>
+        <label for="date">Data</label> <br>
+        <input type="text" id="date" name="date" required>
+      </fieldset>
+      <button type="submit" id="submitBttn">Enviar</button>
+      <button type="reset" id="clearBttn">Limpar</button>
+    </form>
+
+    <div id="alldata">
+
+    </div>
+  </main>
+<script src="script.js"></script>
+</body>
+</html>
