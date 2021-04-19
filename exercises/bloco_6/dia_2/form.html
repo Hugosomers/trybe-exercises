@@ -6,117 +6,72 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Formulário</title>
 
-    <!-- Libs/FrameWorks -->
+		<!-- Libs/FrameWorks -->
 		<link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="node_modules/pikaday/css/pikaday.css">
+		<!-- CSS -->
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="node_modules/pikaday/css/pikaday.css" />
 	</head>
 	<body class="bg-body">
+
+    <link href="validation.min.css" rel="stylesheet">
+    <script src="validation.min.js"></script> 
 		<main>
 			<header>
 				<h1>Cadastro de Currículo</h1>
 			</header>
 			<section class="form-section">
 				<form action="" id="form">
-					<fieldset>
-						<legend>Dados pessoais</legend>
-						<label for="name">Nome</label> <br />
-						<input type="text" name="name" id="name" required maxlength="40" class="form-control" />
+					<p>Dados pessoais</p>
+					<label for="name">Nome</label> <br />
+					<input type="text" name="name" id="name" maxlength="40" class="form-control" data-validate-field="name" />
 
-						<br />
+					<br />
 
-						<label for="email">Email</label> <br />
-						<input
-							type="email"
-							name="email"
-							id="email"
-							required
-							maxlength="50"
-							class="form-control"
-						/>
+					<label for="email">Email</label> <br />
+					<input
+						type="email"
+						name="email"
+						id="email"
+						maxlength="50"
+						class="form-control validate"
+            data-validate="required,email"
+					/>
 
-						<br />
+					<br />
 
-						<label for="cpf">CPF</label> <br />
-						<input type="text" name="cpf" id="cpf" required maxlength="11" class="form-control" />
+					<label for="cpf">CPF</label> <br />
+					<input type="text" name="cpf" id="cpf" maxlength="11" class="form-control" data-validate-field="text" />
 
-						<br />
+					<br />
 
-						<label for="address">Endereço</label> <br />
-						<input
-							type="text"
-							name="address"
-							id="address"
-							required
-							maxlength="200"
-							class="form-control"
-						/>
+					<label for="states">Estado</label> <br />
+					<select name="state" id="states" class="form-select form-select-sm"></select>
 
-						<br />
+					<br />
 
-						<label for="city">Cidade</label> <br />
-						<input type="text" name="city" id="city" required maxlength="28" class="form-control" />
+					<input
+						type="radio"
+						id="house"
+						name="home"
+						value="Casa"
+						data-validate-field="radio"
+						class="form-check-input"
+					/>
+					<label for="house">Casa</label>
+					<input
+						type="radio"
+						id="apartment"
+						name="home"
+						value="Apartamento"
+						data-validate-field="radio"
+						class="form-check-input"
+					/>
+					<label for="apartment">Apartamento</label>
 
-						<br />
+          <br />
 
-						<label for="states">Estado</label> <br />
-						<select name="state" id="states" required class="form-select form-select-sm"></select>
-
-						<br />
-						<input
-							type="radio"
-							id="house"
-							name="home"
-							value="Casa"
-							required
-							class="form-check-input"
-						/>
-						<label for="house">Casa</label>
-						<input
-							type="radio"
-							id="apartment"
-							name="home"
-							value="Apartamento"
-							required
-							class="form-check-input"
-						/>
-						<label for="apartment">Apartamento</label>
-					</fieldset>
-
-					<fieldset>
-						<legend>Último emprego</legend>
-						<label for="summary">Resumo do currículo</label><br />
-						<textarea
-							name="summary"
-							id="summary"
-							maxlength="1000"
-							required
-							class="form-control"
-						></textarea>
-						<br />
-						<label for="office">Cargo</label> <br />
-						<input
-							type="text"
-							id="office"
-							name="office"
-							maxlength="40"
-							required
-							class="form-control"
-						/>
-						<br />
-						<label for="jobsummary">Resumo do cargo</label><br />
-						<textarea
-							name="jobsummary"
-							id="jobsummary"
-							maxlength="500"
-							required
-							class="form-control"
-						></textarea>
-						<br />
-            <input type="text" id="datepicker">
-					</fieldset>
 					<button type="submit" id="submitBttn" class="btn btn-primary">Enviar</button>
 					<button type="reset" id="clearBttn" class="btn btn-danger">Limpar</button>
 				</form>
@@ -124,30 +79,10 @@
 
 			<div id="alldata"></div>
 		</main>
+
+    <!-- scripts -->
+		<script src="node_modules/pikaday/pikaday.js"></script>
+		<script src="moment.js"></script>
 		<script src="script.js"></script>
-    <script src="moment.js"></script>
-    <script src="node_modules/pikaday/pikaday.js"></script>
-    <script>
-var picker = new Pikaday({
-    field: document.getElementById('datepicker'),
-    format: 'D/Mm/YYYY',
-    toString(date, format) {
-        // you should do formatting based on the passed format,
-        // but we will just return 'D/M/YYYY' for simplicity
-        const day = date.getDate();
-        const month = date.getMonth() + 1;
-        const year = date.getFullYear();
-        return `${day}/${month}/${year}`;
-    },
-    parse(dateString, format) {
-        // dateString is the result of `toString` method
-        const parts = dateString.split('/');
-        const day = parseInt(parts[0], 10);
-        const month = parseInt(parts[1], 10) - 1;
-        const year = parseInt(parts[2], 10);
-        return new Date(year, month, day);
-    }
-});
-  </script>
 	</body>
 </html>
