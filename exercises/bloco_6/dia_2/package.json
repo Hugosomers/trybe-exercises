@@ -1,8 +1,1 @@
-{
-  "dependencies": {
-    "just-validate": "^1.5.0",
-    "moment": "^2.29.1",
-    "pikaday": "^1.8.2",
-    "popup-validation": "^3.0.3"
-  }
-}
+{}
