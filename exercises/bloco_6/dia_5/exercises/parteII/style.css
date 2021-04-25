@@ -86,5 +86,50 @@ header p {
 
   .main-content > p {
     line-height: 20px;
+    text-align: justify;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  header > p {
+    font-size: 2em;
+    font-weight: bolder;
+  }
+
+  .navUl {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    list-style: none;
+    font-size: 1.3em;
+  }
+
+  .infoSection {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .main-content {
+    padding: 20px 50px;
+  }
+
+  .main-content > h1 {
+    font-size: 1.6em;
+    text-align: center;
+  }
+
+  .main-content > p {
+    line-height: 25px;
+    font-size: 1.3em;
+    text-align: justify;
+  }
+
+  footer {
+    background-color: rgb(230, 230, 230);
+    font-size: 0.9em;
+    padding: 10px;
+    line-height: 20px;
+    text-align: center;
   }
 }
