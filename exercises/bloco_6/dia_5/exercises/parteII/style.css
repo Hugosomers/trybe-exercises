@@ -1,0 +1,90 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+header p {
+  text-align: center;
+}
+
+/* Media Query pequeno */
+
+@media screen and (min-width: 301px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    padding: 10px;
+  }
+
+  header > p {
+    font-size: 1.2em;
+    font-weight: bolder;
+  }
+  .navUl {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    list-style: none;
+  }
+
+  .labelCheckBoxHack {
+    background-color: rgb(230, 228, 228);
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  .checkboxHack > input[type= 'checkbox'] {
+    display: none;
+  }
+
+  .checkboxHack > ul {
+    display: none;
+    list-style: none;
+    margin: 10px;
+    font-size: smaller;
+  }
+
+  #checkboxChapters:checked ~ ul {
+    display: initial;
+  }
+  
+  .checkboxHack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    justify-content: space-around;
+  }
+
+  aside {
+    /* border: 1px solid green; */
+    padding: 10px 20px;
+  }
+
+  #checkboxInformation {
+    display: none;
+  }
+
+  #checkboxInformation:checked ~ ul {
+    display: initial;
+  }
+
+  .main-content {
+    font-size: 0.9em;
+    padding: 10px 20px;
+  }
+
+  .main-content > h1 {
+    font-size: 1.4em;
+    text-align: center;
+  }
+
+  .main-content > p {
+    line-height: 20px;
+  }
+}
