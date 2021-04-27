@@ -22,4 +22,16 @@ const allLessons = {};
 
 Object.assign(allLessons, {lesson1, lesson2, lesson3});
 
-console.log(allLessons);
+const sumStudents = (obj) => {
+
+  let totalStudents = 0;
+  const keys = Object.keys(allLessons);
+
+  for (let index in keys) {
+    totalStudents += obj[keys[index]].numeroEstudantes
+  }
+
+  return totalStudents;
+}
+
+console.log(sumStudents(allLessons));
