@@ -1,3 +1,4 @@
+// Funções de damage e declaração de objetos dos personagens
 const mageDmg = (mageObj) => {
   let manaSpent = 15;
   const mageManaPool = mageObj.mana;
@@ -25,7 +26,7 @@ const mageDmg = (mageObj) => {
 const mage = {
   healthPoints: 130,
   intelligence: 45,
-  mana: 14,
+  mana: 150,
   damage: undefined,
 };
 
@@ -54,11 +55,34 @@ const dragon = {
   damage: undefined,
 };
 
-dragon.damage = dragonDmg(dragon);
-warrior.damage = warriorDmg(warrior);
-mage.damage = mageDmg(mage);
-
 const battleMembers = { mage, warrior, dragon };
 
-console.log(battleMembers);
+// Roda os turnos
 
+const gameActions = {
+  warriorTurn: (warriorDmg) => {
+    const wDmg = warriorDmg(warrior);
+    warrior.damage = wDmg;
+    dragon.healthPoints -= wDmg;
+  },
+  mageTurn: (mageDmgTurn) => {
+    const mDmg = mageDmgTurn(mage);
+    mage.damage = mDmg;
+    const damageDealt = mDmg.damage;
+    dragon.healthPoints -= damageDealt;
+  },
+  dragonTurn: (dragonDmgTurn) => {
+    const dDmg = dragonDmgTurn(dragon);
+    dragon.damage = dDmg;
+    mage.healthPoints -= dDmg;
+    warrior.healthPoints -= dDmg;
+  },
+  endOfTurn: () => {
+    gameActions.warriorTurn(warriorDmg);
+    gameActions.mageTurn(mageDmg);
+    gameActions.dragonTurn(dragonDmg);
+    return battleMembers;
+  }
+};
+
+console.log(gameActions.endOfTurn());
