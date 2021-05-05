@@ -71,7 +71,7 @@ function averageAge() {
     return acc += book.releaseYear - book.author.birthYear;
   }, 0);
 
-  return returnAverage / books.length;
+  return returnAverage / books.length; // Colocar a divisão aqui, pois queremos a média do resultado final e não de cada iteração no reduce.
 }
 
 assert.strictEqual(averageAge(), expectedResult);
