@@ -15,15 +15,18 @@ const prom = new Promise((resolve, reject) => {
 
 })
 .then((num) => {
-  const divideArray = [];
-  for (let index = 0; index <= 10; index += 1) {
-    if (index === 2 || index === 3 || index === 5 || index === 10) {
-      const newNumbers = num / index;
-      divideArray.push(parseInt(newNumbers));
-    }
-  }
-  console.log(`Promise resolvida ${num} [${divideArray}]`);
-  return divideArray;
+  // const divideArray = [];
+  // for (let index = 0; index <= 10; index += 1) {
+  //   if (index === 2 || index === 3 || index === 5 || index === 10) {
+  //     const newNumbers = num / index;
+  //     divideArray.push(parseInt(newNumbers));
+  //   }
+  // }
+
+  const numbersToDivide = [2, 3, 5, 10];
+  const result = numbersToDivide.map((each) => parseInt(num / each));
+  console.log(`Promise resolvida ${num} [${result}]`);
+  return result;
 })
 .then((array) => {
   console.log(`A soma de todo o array de divisões: ${array.reduce((acc, curr) => acc + curr, 0)}`);
