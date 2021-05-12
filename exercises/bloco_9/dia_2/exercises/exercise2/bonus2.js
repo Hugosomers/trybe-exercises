@@ -19,8 +19,9 @@ const result = (sum) => [2, 3, 5, 10].map((each) => parseInt(sum / each)).reduce
 const asyncFunction = async () => {
   try {
     const aleatorio = await prom();
+    const secondFunct = await result(aleatorio);
     console.log(aleatorio);
-    console.log(result(aleatorio));
+    console.log(secondFunct);
   }
   catch (error) {
     console.log('Xablau');
