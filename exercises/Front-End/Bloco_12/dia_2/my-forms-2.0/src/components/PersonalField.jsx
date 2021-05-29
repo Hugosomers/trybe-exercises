@@ -6,6 +6,7 @@ export default class PersonalField extends Component {
     const { value, handler, upperCaseFunc, specialCharsRem, verirfyFirstChar, validateEmail } = this.props
     return (
       <fieldset>
+        <legend>Informações pessoais</legend>
 
         <p>Nome:</p>
         <label>

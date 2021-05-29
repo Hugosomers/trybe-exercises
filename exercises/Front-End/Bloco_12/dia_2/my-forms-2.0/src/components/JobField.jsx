@@ -5,6 +5,7 @@ export default class JobField extends Component {
     const { value, handler, mouseOnTop } = this.props
     return (
       <fieldset>
+        <legend>Informações do último emprego</legend>
         <p>Resumo do currículo:</p>
         <label>
           <textarea maxLength="1000" required name="cv" value={value.cv} onChange={handler} />
