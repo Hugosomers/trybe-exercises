@@ -31,6 +31,7 @@ export default class Forms extends Component {
     this.mouseOnTop = this.mouseOnTop.bind(this);
     this.submitForm = this.submitForm.bind(this);
     this.resetForm = this.resetForm.bind(this);
+    this.validateEmail = this.validateEmail.bind(this);
 
     this.state = {
       nome: '',
@@ -95,6 +96,15 @@ export default class Forms extends Component {
     this.setState(toReset)
   }
 
+  validateEmail() {
+    if (!this.state.email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/igm)) {
+      this.setState({
+        email: '',
+      })
+      alert('Email invalido')
+    }
+  }
+
   render() {
 
     const { submit } = this.state;
@@ -107,6 +117,7 @@ export default class Forms extends Component {
           upperCaseFunc={this.toUpperCaseInput}
           specialCharsRem={this.specialCharsRemove}
           verirfyFirstChar={this.verifyFirstChar}
+          validateEmail={this.validateEmail}
         />
 
         <JobField 

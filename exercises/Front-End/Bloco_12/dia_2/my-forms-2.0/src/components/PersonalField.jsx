@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class PersonalField extends Component {
   render() {
     const estados = ['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MS','MT','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SE','SP','TO'];
-    const { value, handler, upperCaseFunc, specialCharsRem, verirfyFirstChar } = this.props
+    const { value, handler, upperCaseFunc, specialCharsRem, verirfyFirstChar, validateEmail } = this.props
     return (
       <fieldset>
 
@@ -14,7 +14,7 @@ export default class PersonalField extends Component {
 
         <p>E-mail:</p>
         <label>
-          <input name="email" type="text" maxLength="50" required onChange={handler} value={value.email} />
+          <input name="email" type="text" maxLength="50" required onChange={handler} onBlur={validateEmail} value={value.email} />
         </label>
 
         <p>CPF:</p>
