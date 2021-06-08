@@ -28,15 +28,17 @@ export default class RandomUser extends Component {
     this.fetchApi();
   }
 
-  // Não consigo fazer o shouldComponentFuncionar
-
-  // shouldComponentUpdate(_nextProps, { usersObj }) {
-  //   const ageLimit = 50;
-  //   const arr = usersObj[0];
-    
-  //   console.log(arr)
-  //   // return true
-  // }
+  shouldComponentUpdate(_nextProps, { usersObj }) {
+    const ageLimit = 50;
+    const arr = usersObj[0];
+    console.log(arr)
+    if(arr) {
+     if(arr.dob.age > ageLimit) {
+       return false
+     }
+    }
+    return true
+  }
 
   render() {
     const loadingLine = <div>Loading...</div>
