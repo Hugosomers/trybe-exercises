@@ -18,7 +18,7 @@ test('Testando um componente, caso o email seja inválido.', () => {
 
 test('Testando se a mensagem não aparece caso não tenha digitado nenhum email', () => {
   const NO_EMAIL = '';
-  const { getByText } = render(<ValidEmail email={NO_EMAIL}/>);
-  const noMessage = getByText('Email Inválido');
+  const { queryByText } = render(<ValidEmail email={NO_EMAIL}/>);
+  const noMessage = queryByText('Email Inválido');
   expect(noMessage).not.toBeInTheDocument();
 })
