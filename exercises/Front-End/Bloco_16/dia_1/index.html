@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redux sem React</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.1.0/redux.min.js"></script>
+  </head>
+  <body>
+    <div>
+      Clicou <span id="value"></span> vezes.
+      <br />
+      <button id="increment">+</button>
+      <button id="decrement">-</button>
+      <input type="text" id="typedValue"/>
+      <p>Cliclou nos botões: <span id="clickCounter"></span> vezes</p>
+    </div>
+    <script>
+
+      const store = Redux.createStore(reducerCount);
+
+      function reducerCount(state = {value: 0, click: 0}, action) {
+        switch(action.type) {
+          case 'INC':
+            return {value: state.value + action.value, click: state.click + 1};
+          case 'DEC':
+            return {value: state.value - action.value, click: state.click + 1};
+          default:
+            return state;
+        }
+      }
+
+      document.getElementById('increment').addEventListener('click', () => {
+        const inputValue = document.getElementById('typedValue');
+        const inc = {
+          type: 'INC',
+          value: inputValue.value ? parseInt(inputValue.value) : 1,
+        }
+        store.dispatch(inc);
+      });
+
+      document.getElementById('decrement').addEventListener('click', () => {
+        const inputValue = document.getElementById('typedValue');
+        const dec = {
+          type: 'DEC',
+          value: inputValue.value ? parseInt(inputValue.value) : 1,
+        }
+        store.dispatch(dec);
+        console.log(store.getState())
+      });
+      
+      store.subscribe(() => {
+        document.getElementById('value').innerHTML = store.getState().value
+        document.getElementById('clickCounter').innerHTML = store.getState().click
+      })
+
+    </script>
+  </body>
+</html>
