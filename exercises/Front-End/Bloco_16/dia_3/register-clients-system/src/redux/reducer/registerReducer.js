@@ -12,6 +12,16 @@ const registerReducer = (state = INITIAL_STATE, action) => {
       return {
         clients: state.clients.filter((client, index) => index !== action.index),
       }
+    case 'FILTER_CLIENTS':
+      const sortedClients = [...state.clients.sort((a, b) => a.nome.localeCompare(b.nome))];
+      if(action.value === "alfabetica") {
+        return {
+          clients: sortedClients,
+        }
+      }
+      return {
+        clients: [...state.clients.sort((a, b) => b.nome.localeCompare(a.nome))]
+      }
     default:
       return state;
   }

@@ -3,17 +3,16 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux'
 import ClientsMap from '../components/ClientsMap';
 import '../css/clients.css';
+import { filterClients } from '../redux/action/filterClients';
 
 class Clients extends Component {
   constructor(props) {
     super(props);
     this.state = {
       filterType: 'all',
-      // filteredClients: props.clients,
     }
 
     this.selectHandle = this.selectHandle.bind(this);
-    // this.filterClients = this.filterClients.bind(this);
   }
 
   selectHandle({target}) {
@@ -23,30 +22,8 @@ class Clients extends Component {
     })
   }
 
-  // filterClients() {
-  //   const { clients } = this.props;
-  //   const { filterType } = this.state;
-    
-  //   if(filterType === 'all') {
-  //     this.setState({
-  //       filteredClients: clients,
-  //     });
-  //   }
-
-  //   if(filterType === 'alfab') {
-  //     const sortedArray = [...clients.sort(function(a, b) {
-  //       return a.nome.localeCompare(b.nome);
-  //     })];
-  //     this.setState({
-  //       filteredClients: sortedArray,
-  //     });
-  //   }
-
-  // }
-
   render() {
-    const { userEmail, userSenha, clients } = this.props;
-    // const { filteredClients } = this.state;
+    const { userEmail, userSenha, clients, filterClients } = this.props;
 
     if(!userEmail || !userSenha) {
       alert('Login não efetuado!');
@@ -55,11 +32,11 @@ class Clients extends Component {
     return (
       <div className="clientsContainer">
         <h1>Clientes cadastrados</h1>
-        <select onChange={this.selectHandle} >
+        <select onChange={filterClients}>
           <option value="all">Todos</option>
-          <option value="alfab">Alfabética</option>
+          <option value="alfabetica">Alfabética</option>
         </select>
-        <button type="button" onClick={this.filterClients}>Aplicar</button>
+        {/* <button type="button" onClick={this.filterClients}>Aplicar</button> */}
         {clients.length === 0 ? <h3>Nenhum cliente cadastrado!</h3> : <ClientsMap clients={clients}/>}
         <Link className="Links" to="/registerClients">Cadastrar clientes</Link>
         <Link className="Links" to="/">Sair</Link>
@@ -72,6 +49,10 @@ const mapStateToProps = (state) => ({
   userEmail: state.loginReducer.email,
   userSenha: state.loginReducer.senha,
   clients: state.registerReducer.clients,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  filterClients: (e) => dispatch(filterClients(e)),
 })
 
-export default connect(mapStateToProps)(Clients)
+export default connect(mapStateToProps, mapDispatchToProps)(Clients)
