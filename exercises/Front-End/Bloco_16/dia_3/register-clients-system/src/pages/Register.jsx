@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addClient } from '../redux/action/registerClient'
 import { Link } from 'react-router-dom';
+import '../css/registerClient.css';
 
 
 class Register extends Component {
@@ -39,42 +40,48 @@ class Register extends Component {
   render() {
     const {nome, idade, email} = this.state;
     return (
-      <div>
+      <div className="registerContainer">
         <h1>Registro de clientes</h1>
-        <form>
-          <label>
+        <form className="registerForm">
+          <label className="registerFormLabel">
             Nome:
-            <input 
+            <input
+              className="registerFormInput"
               type="text" 
               name="nome"
               onChange={this.inputHandle}
               value={nome}
+              required
             />
           </label>
 
-          <label>
+          <label className="registerFormLabel">
             Idade:
-            <input 
+            <input
+              className="registerFormInput"
               type="text" 
               name="idade"
               onChange={this.inputHandle}
               value={idade}
+              required
             />
           </label>
 
-          <label>
+          <label className="registerFormLabel">
             Email:
-            <input 
+            <input
+              className="registerFormInput"
               type="text" 
               name="email"
               onChange={this.inputHandle}
               value={email}
+              required
             />
           </label>
 
-          <button onClick={this.submitHandle}>Cadastrar</button>
+          <button className="registerFormButton" onClick={this.submitHandle}>Cadastrar</button>
         </form>
-        <Link to="/clients" >Clientes cadastrados</Link>
+        <Link to="/clients" className="Links">Clientes cadastrados</Link>
       </div>
     )
   }

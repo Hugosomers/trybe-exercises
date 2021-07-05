@@ -8,6 +8,10 @@ const registerReducer = (state = INITIAL_STATE, action) => {
       return {
         clients: [...state.clients, action.state]
       };
+    case 'DELETE_CLIENT':
+      return {
+        clients: state.clients.filter((client, index) => index !== action.index),
+      }
     default:
       return state;
   }
