@@ -16,6 +16,7 @@ SELECT LCASE('RUA NORTE 1500, SÃO PAULO, BRASIL');
 
 -- -------------------------------------------------------------------------------
 -- Condicionais
+
 -- 1 - Usando o IF na tabela sakila.film, exiba o id do filme, o título e uma coluna extra chamada 'conheço o filme?', em que deve-se avaliar se o nome do filme é ' ACE GOLDFINGER '. 
 -- Caso seja, exiba "Já assisti a esse filme". Caso contrário, exiba "Não conheço o filme". Não esqueça de usar um alias para renomear a coluna da condicional.
 SELECT film_id, title, IF(title = 'ACE GOLDFINGER', 'Já assisti a esse filme', 'Não conheço o filme') AS 'Conheço o filme?'
@@ -38,4 +39,18 @@ ELSE 'Proibido para menores de idade'
 END AS 'público-alvo' 
 FROM sakila.film;
 
+-- -------------------------------------------------------------------------------
+-- Funções matemáticas do MySQL
+
+-- 1 - Monte uma query usando o MOD juntamente com o IF para descobrir se o valor 15 é par ou ímpar. Chame essa coluna de 'Par ou Ímpar' , onde ela pode dizer 'Par' ou 'Ímpar'.
+SELECT IF((84 MOD 23) / 2 = 0, 'Par', 'Ímpar');
+-- 2 - Monte uma query que gere um valor entre 15 e 20 .
+SELECT ROUND(15 + (RAND() * 5));
+-- 3 - Monte uma query que exiba o valor arredondado de 15.7515971 com uma precisão de 5 casas decimais.
+SELECT ROUND(15.7515971, 5);
+-- 4 - Estamos com uma média de 39.494 de vendas de camisas por mês. Qual é o valor aproximado para baixo dessa média?
+SELECT FLOOR(39.494);
+-- 5 - Temos uma taxa de inscrição de 85.234% no curso de fotografia para iniciantes. Qual é o valor aproximado para cima dessa média?
+SELECT CEIL(85.234);
+ 
 -- -------------------------------------------------------------------------------
