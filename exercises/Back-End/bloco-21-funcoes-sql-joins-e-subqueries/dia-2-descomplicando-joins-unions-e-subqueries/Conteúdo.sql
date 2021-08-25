@@ -115,3 +115,9 @@ INNER JOIN sakila.address ad ON c.address_id = ad.address_id;
 -- EXISTS
 SELECT * From hotel.customers AS c
 WHERE EXISTS (SELECT * FROM hotel.reservations WHERE c.CustomerID = reservations.CustomerID);
+
+SELECT `Name` FROM praticando.manufacturers AS m
+WHERE NOT EXISTS (
+	SELECT * FROM praticando.products
+	WHERE Manufacturer = m.Code
+);
