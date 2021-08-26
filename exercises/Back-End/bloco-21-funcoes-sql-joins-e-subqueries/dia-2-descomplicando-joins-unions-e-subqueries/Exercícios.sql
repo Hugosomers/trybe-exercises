@@ -28,8 +28,15 @@ FROM pixar.theater c
 RIGHT JOIN pixar.movies m
 ON c.id = m.theater_id
 ORDER BY c.name;
--- Exercício 6: Faça duas buscas, uma utilizando SUBQUERY e outra utilizando INNER JOIN , que retornem os títulos dos filmes que possuem avaliação maior que 7.5.
-
--- Exercício 7: Faça duas buscas, uma utilizando SUBQUERY e outra utilizando INNER JOIN , que retornem as avaliações dos filmes lançados depois de 2009.
+-- Exercício 6: Utilizando SUBQUERY faça uma busca, que retornem os títulos dos filmes que possuem avaliação maior que 7.5.
+SELECT title, (SELECT rating FROM pixar.boxoffice WHERE movie_id = pixar.movies.id) AS rating
+FROM pixar.movies;
+-- Exercício 7: Utilizando SUBQUERY faça uma busca, que retornem as avaliações dos filmes lançados depois de 2009.
+SELECT rating FROM BoxOffice
+WHERE movie_id IN (SELECT id FROM Movies WHERE `year` > 2009);
 -- Exercício 8: Utilizando o EXISTS , selecione o nome e localização dos cinemas que possuem filmes em cartaz.
+SELECT `name`, location FROM pixar.theater AS t
+WHERE EXISTS (SELECT * FROM pixar.movies WHERE t.id = theater_id);
 -- Exercício 9: Utilizando o EXISTS , selecione o nome e localização dos cinemas que não possuem filmes em cartaz.
+SELECT `name`, location FROM pixar.theater AS t
+WHERE NOT EXISTS (SELECT * FROM pixar.movies WHERE t.id = theater_id);
